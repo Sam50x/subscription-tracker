@@ -1,11 +1,9 @@
 import { Router } from "express";
+import { getAllUsers, getOneUser, createUser, updateUser, deleteUser } from "../controllers/user.controller";
 
 const userRouter = Router()
 
-userRouter.get('/', (req, res) => { res.json({ msg: 'Get All Users' }) })
-userRouter.get('/:id', (req, res) => { res.json({ msg: 'Get One User' }) })
-userRouter.post('/', (req, res) => { res.json({ msg: 'Create a User' }) })
-userRouter.patch('/:id', (req, res) => { res.json({ msg: 'Update a User' }) })
-userRouter.delete('/:id', (req, res) => { res.json({ msg: 'Delete a User' }) })
+userRouter.route('/').get(getAllUsers).post(createUser)
+userRouter.route('/:id').get(getOneUser).patch(updateUser).delete(deleteUser)
 
 export default userRouter
