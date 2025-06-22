@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllSubscriptions, getOneSubscription, createSubscription, updateSubscription, deleteSubscription, getUserSubscription, cancelSubscription, getUpcomingRenewals } from '../models/subscription.model.js'
+import { getAllSubscriptions, getOneSubscription, createSubscription, updateSubscription, deleteSubscription, getUserSubscription, cancelSubscription, getUpcomingRenewals } from '../controllers/subscription.controller.js'
 
 const subscriptionRouter = Router()
 
